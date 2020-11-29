@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "path-browserify": "^1.0.1",
+    "webpack": "^5.9.0",
+    "webpack-cli": "^4.2.0"
+  }
 }

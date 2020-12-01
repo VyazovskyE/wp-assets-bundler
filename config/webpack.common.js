@@ -1,5 +1,6 @@
 const paths = require('./paths.js')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: paths.src + '/scripts/main.js',
@@ -7,7 +8,8 @@ module.exports = {
     path: paths.build,
   },
   plugins: [
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin()
   ],
   module: {
     rules: [
@@ -24,7 +26,7 @@ module.exports = {
       {
         test: /\.(scss|css)$/,
         use: [
-          {loader: 'file-loader', options: {name: '[name].[ext]'}},
+          MiniCssExtractPlugin.loader,
           {loader: 'css-loader', options: {sourceMap: true, importLoaders: 1}},
           {loader: 'sass-loader', options: {sourceMap: true}}
         ]

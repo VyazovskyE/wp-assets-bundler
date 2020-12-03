@@ -28,9 +28,29 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {loader: 'css-loader', options: {sourceMap: true, importLoaders: 1}},
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              postcssOptions: {
+                config: paths.root + '/postcss.config.js',
+              }
+            }
+          },
           {loader: 'sass-loader', options: {sourceMap: true}}
         ]
       },
     ]
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
   }
 }

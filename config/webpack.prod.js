@@ -16,16 +16,7 @@ module.exports = merge(common, {
     minimizer: [
       new TerserJSPlugin(),
       new CssMinimizerPlugin()
-    ],
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all'
-        }
-      }
-    }
+    ]
   },
   performance: {
     hints: false,

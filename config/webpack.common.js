@@ -33,7 +33,9 @@ module.exports = {
             options: {
               sourceMap: true,
               postcssOptions: {
-                config: paths.root + '/postcss.config.js',
+                plugins: [
+                  require('autoprefixer')
+                ]
               }
             }
           },

@@ -11,9 +11,9 @@
   "author": "",
   "license": "ISC",
   "browserslist": [
-    "last 2 versions or > 2%",
-    "not IE 11",
-    "not IE_Mob 11"
+    ">0.25%",
+    "not ie 11",
+    "not op_mini all"
   ],
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -33,5 +33,8 @@
     "webpack-cli": "^4.2.0",
     "webpack-merge": "^5.4.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "core-js": "^3.8.0",
+    "regenerator-runtime": "^0.13.7"
+  }
 }
